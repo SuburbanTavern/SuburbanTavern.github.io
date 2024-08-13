@@ -1,0 +1,55 @@
+{{ define "main" }}
+{{ $data := index .Site.Data (.Params.datafile) }}
+
+{{ partial "jumbotron" $data }}
+
+<div class="container">
+{{ $section := $data.sections }}
+{{ range $sidx, $s := $section }}
+    <hr />
+    <div class="row">
+        <div class="col-1">&nbsp;</div>
+        <div class="col-10">
+            <h1>{{ $s.name | markdownify }}</h1>
+            <p>{{ $s.content | markdownify }}</p>
+        </div>
+        <div class="col-1">&nbsp;</div>
+    </div>
+    {{ range $iidx, $i := $s.item }}
+    <div class="row">
+        <div class="col-1">&nbsp;</div>
+        <div class="col-6" style="font-weight: bold;">{{ $i.name | markdownify }}</div>
+
+        <div class="col-4 text-right">
+        {{ $i.price }}
+        </div>
+        <div class="col-1">&nbsp;</div>
+    </div>
+    {{ if (isset $i "description") }}
+    <div class="row" style="margin-bottom: 15px;">
+        <div class="col-1">&nbsp;</div>
+        <div class="col-10"><i>{{ $i.description | markdownify }}</i></div>
+        <div class="col-1">&nbsp;</div>
+    </div>
+    {{ end }}
+
+    {{ if (isset $i "options") }}
+    {{ range $oidx, $options := $i.options }}
+    <div class="row">
+        <div class="col-2">&nbsp;</div>
+        <div class="col-5" style="border-bottom: 1px dotted;"><i>{{ $options.description | markdownify }}</i></div>
+        <div class="col-4 text-right" style="border-bottom: 1px dotted;"><i>{{ $options.price }}</i></div>
+    </div>
+    {{ end }}
+    <div class="col-1">&nbsp;</div>
+    {{ end }}
+
+
+
+    {{ end }}
+{{ end }}
+</div>
+
+{{ partial "contact-forms" $data }}
+
+{{ end }}

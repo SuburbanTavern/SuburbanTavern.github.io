@@ -1,0 +1,12 @@
+name = "Suburban Tavern"
+license = "copyright 2020 - Suburban Tavern"
+licenselink = "http://localhost/"
+description = ""
+homepage = "https://www.suburbantavern.com/"
+tags = []
+features = []
+min_version = "0.78.2"
+
+[author]
+
+[original]

@@ -1,0 +1,24 @@
+{{ define "main" }}
+{{ $data := .Params }}
+
+{{ if isset $data "slider" }}
+{{ partial "slider" $data.slider }}
+{{ end }}
+
+{{ partial "jumbotron" $data }}
+
+<div class="row">
+    <div class="col-1">&nbsp;</div>
+    <div class="col-10">{{ .Content  }}</div>
+    <div class="col-1">&nbsp;</div>
+</div>
+
+{{ if isset $data "sections" }}
+{{ partial "sections" $data.sections }}
+{{ end }}
+
+
+{{ partial "contact-forms" $data }}
+
+
+{{ end }}

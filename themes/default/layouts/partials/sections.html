@@ -1,0 +1,37 @@
+{{ $sections := . }}
+{{ $count := (len $sections )}}
+
+{{ if ne $count 0 }}
+
+    {{ range $idx, $value := $sections }}
+        <div class="d-none d-md-block d-lg-block d-xl-block">
+            {{ if not (modBool $idx 2) }}
+            <div class="media">
+                <img class="align-self-center mr-3 img-fluid" src="{{ $value.image }}" alt="{{ $value.title }}">
+                <div class="media-body">
+                    <h3 class="mt-0">{{ $value.title }}</h3>
+                    <p class="align-self-center">{{ $value.description }}</p>
+                </div>
+            </div>
+            {{ else }}
+            <div class="media">
+                <div class="media-body">
+                    <h3 class="mt-0 mb-1">{{ $value.title }}</h3>
+                    <p>{{ $value.description }}</p>
+                </div>
+                <img class="align-self-center ml-3 img-fluid" src="{{ $value.image }}" alt="{{ $value.title }}">
+            </div>
+            {{ end }}
+        </div>
+
+        <div class="d-block d-md-none">
+            <img class="img-fluid rounded mx-auto d-block" style="max-width: 100%; height: auto;" src="{{ $value.image }}" alt="{{ $value.title }}" />
+            <h3 class="text-center">{{ $value.title }}</h3>
+            <p class="ml-4 mr-4">{{ $value.description }}</p>
+        </div>
+
+        <hr />
+
+    {{ end }}
+
+{{ end }}

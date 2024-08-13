@@ -1,0 +1,50 @@
+{{ define "main" }}
+{{ $paginator := .Paginate (where .Pages "Type" "news") }}
+
+<!-- Hugo's default pagination template. -->
+{{ template "_internal/pagination.html" . }}
+
+<div class="row">
+    <div class="offset-1 col-10">
+        {{ .Content }}
+    </div>
+</div>
+<div class="row">
+    <div class="offset-1 col-10">
+        <ul class="list-unstyled">
+            {{ range $paginator.Pages }}
+            <li class="media">
+                {{ if isset .Params "headshot" }}
+                <img src="{{.Params.headshot }}" alt="{{ .Params.author }}" class="rounded-circle" style="max-width: 100px; margin-right: 20px;" />
+                {{ end }}
+                <div class="media-body">
+                    <a href="{{ .Permalink }}">
+                        <h5>{{ .Title }}</h5>
+                    </a>
+                    {{ .Summary }}
+                    {{ if .Truncated }}
+                    <!-- This <div> includes a read more link, but only if the summary is truncated... -->
+                    <div>
+                        <a href="{{ .RelPermalink }}">Read More…</a>
+                    </div>
+                    {{ end }}
+                </div>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+
+<!-- Hugo's default pagination template. -->
+{{ template "_internal/pagination.html" . }}
+
+<br /><br />
+<hr />
+<div class="row">
+    <div class="offset-1 col-10">
+        <h3>Have a noteworthy article that should be listed here, please send us information on the article.</h3>
+    </div>
+</div>
+{{ partial "contactus" . }}
+
+{{ end }}

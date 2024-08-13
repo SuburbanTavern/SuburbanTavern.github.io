@@ -1,0 +1,78 @@
+title: Welcome to The Suburban
+subtitle: Menu
+description: Suburban Tavern has been providing delicious, unique dishes to Berks County for over 50 years.  Our vast selection of beverages and wide array of food makes our tavern a must try for you and your family.  Come dine inside or outside.  We offer seating in our cozy main dining room or outside on our garden patio, for those warm summer nights.  We offer catering for parties, social events, and more.
+contactus: restaurant
+sections:
+  - name: Drinks 
+    content: 
+    item:
+      - name: Ocean Bourbon Breeze 
+        price: $12
+      - name: Georgia Peach Tini
+        price: $12
+      - name: Tipsy Texan
+        price: $12
+      - name: Long Island
+        price: $10
+        
+  - name: Soup
+    content:
+    item:
+      - name: French Onion Soup
+        price: $7
+      - name: Corn Crab Chowder
+        price: $7
+        
+  - name: Appetizers
+    content:
+    item:
+      - name: Mussel's ala olio or in marinara
+        price: $15
+      - name: Onion Rings or Mozzarella Sticks 
+        price: $10
+      - name: Jumbo Wings 
+        price: $15
+  - name: Special of the Week
+    content:
+    item:
+      - name: Chicken Quesadilla
+        description: Chicken w/cheddar cheese, sauteed onions & black beans 
+        price: $15
+
+  - name: Entrees
+    content: Dinners are served w/a house salad, French bread & vegetable du jour. Also, your choice of baked potato, roasted steak fries or wild rice. 
+    item:
+      - name: Chesapeake Filet
+        description: Filet topped w/a crab cake & finished w/an imperial sauce 
+        price: $40              
+      - name:  Chicken Francaise        
+        description: Chicken breast lightly egg battered, pan sauteed & finished w/a white wine lemon butter sauce 
+        price: $28
+      - name: Crab Cakes
+        options:
+        - description: Original
+          price: $25
+        - description: Cajun
+          price: $26    
+      - name: Stuffed Flounder   
+        description: Flounder filets filled w/a crab cake
+        price: $28      
+      - name: Wild Mushroom Ravioli & Shrimp     
+        description: Shrimp & spinach in piccata sauce served over wild mushroom ravioli
+        price: $28
+
+  - name: Desserts
+    content:
+    item:
+      - name: Limoncello Mascarpone Cake
+        price: $6 
+      - name: Triple Chocolate Fudge Cake
+        price: $6 
+        
+  - name: Kids Menu - under 12
+    content: NO COUPONS OF ANY KIND ARE BEING ACCEPTED AT THIS TIME
+    item:
+      - name: Pasta w/meatball
+        price: $5
+      - name: Grilled Cheese Sandwich/ff
+        price: $5

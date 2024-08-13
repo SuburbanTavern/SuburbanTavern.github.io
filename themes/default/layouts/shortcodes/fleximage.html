@@ -1,0 +1,5 @@
+{{ $class := .Get "class" }}
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" }}
+
+<img src="{{ $src }}" class="img-fluid {{ $class }}" alt="{{ $alt }}" />

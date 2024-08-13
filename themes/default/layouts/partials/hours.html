@@ -1,0 +1,25 @@
+{{- $hours := $.Site.Data.contact.hours }}
+<hr />
+<div class="row text-center">
+    <div class="col-12 text-center">
+        <h1>Hours</h1>
+    </div>
+</div>
+<dd>
+</dd>
+<div class="row">
+    <div class="col-1">&nbsp;</div>
+    {{ range $hidx, $h := $hours }}
+    <div class="col-sm">
+        <h2>{{ $h.header | markdownify }}</h2>
+        <dl class="row">
+            {{ range $lidx, $l := $h.lines }}
+            <dt class="col-4">{{ $l.day }}</dt>
+            <dd class="col-8">{{ $l.hours }}</dd>
+            {{ end }}
+        </dl>
+    </div>
+    {{ end }}
+    <div class="col-1">&nbsp;</div>
+</div>
+<hr />

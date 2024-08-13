@@ -1,0 +1,19 @@
+{{ define "main" }}
+{{ $data := index .Site.Data (.Params.datafile) }}
+
+{{ if isset $data "slider" }}
+{{ partial "slider" $data.slider }}
+{{ end }}
+
+{{ partial "jumbotron" $data }}
+
+{{ if isset $data "sections" }}
+{{ partial "sections" $data.sections }}
+{{ end }}
+
+{{ partial "hours.html" . }}
+
+{{ partial "contact-forms" $data }}
+
+
+{{ end }}

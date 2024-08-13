@@ -1,0 +1,18 @@
+{{ define "main" }}
+{{ $data := .Params }}
+
+{{ if isset $data "slider" }}
+{{ partial "slider" $data.slider }}
+{{ end }}
+
+{{ partial "jumbotron" $data }}
+
+{{ if isset $data "sections" }}
+{{ partial "sections" $data.sections }}
+{{ end }}
+
+
+{{ partial "contact-forms" $data }}
+
+
+{{ end }}

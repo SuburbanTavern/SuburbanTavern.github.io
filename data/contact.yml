@@ -1,0 +1,42 @@
+title: Contact
+subtitle: The Suburban Tavern
+description: |
+  **Phone:** 610-779-6440
+
+  **Email:** gary@suburbantavern.com
+
+  **Address:** 2201 Perkiomen Ave; Reading, PA 19606
+contactus: general
+hours:
+  - header: Restaurant
+    lines:
+      - day: Sunday
+        hours: Closed
+      - day: Monday
+        hours: Closed
+      - day: Tuesday
+        hours: Closed
+      - day: Wednesday
+        hours: Closed
+      - day: Thursday
+        hours: 4:00pm - 8:00pm
+      - day: Friday
+        hours: 4:00pm - 8:00pm
+      - day: Saturday
+        hours: 4:00pm - 8:00pm
+  - header: Cigar Lounge
+    lines:
+      - day: Sunday
+        hours: Closed
+      - day: Monday
+        hours: Closed
+      - day: Tuesday
+        hours: 4:00pm - 8:00pm
+      - day: Wednesday
+        hours: 4:00pm - 8:00pm
+      - day: Thursday
+        hours: 4:00pm - 8:00pm
+      - day: Friday
+        hours: 4:00pm - 8:00pm
+      - day: Saturday
+        hours: 4:00pm - 8:00pm

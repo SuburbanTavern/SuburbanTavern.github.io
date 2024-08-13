@@ -1,0 +1,13 @@
+{{ define "main" }}
+{{ $data := .Params }}
+
+{{ partial "slider" $data.slider }}
+{{ partial "jumbotron" $data }}
+
+{{ if ne (len $data.sections) 0 }}
+{{ partial "sections" $data.sections }}
+{{ end }}
+
+{{ partial "contact-forms" $data }}
+
+{{ end }}

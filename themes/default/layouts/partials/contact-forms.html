@@ -1,0 +1,11 @@
+<div id="mc_embed_signup">
+    {{ if isset . "contactus" }}
+{{ if eq .contactus "general" }}
+    {{ partial "contactus" . }}
+{{ else if eq .contactus "cigars" }}
+    {{ partial "contactus-cigars" . }}
+{{ else }}
+    {{ partial "contactus-restaurant" . }}
+{{ end }}
+{{ end }}
+</div>

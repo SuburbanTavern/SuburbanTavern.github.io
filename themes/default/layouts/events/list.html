@@ -1,0 +1,61 @@
+{{ define "main" }}
+{{ $data := .Params }}
+{{ $paginator := .Paginate (where .Pages "Type" "events") }}
+
+{{ if isset $data "slider" }}
+{{ partial "slider" $data.slider }}
+{{ end }}
+
+<div class="row">
+    <div class="offset-1 col-10">{{ .Content }}</div>
+</div>
+
+<div class="row">
+    <div class="offset-1 col-10">
+        {{ if eq $paginator.TotalPages 0 }}
+
+        <blockquote class="blockquote">
+            <p>We have no events scheduled at this time. Please check-back often for upcoming events.</p>
+            <footer class="blockquote-footer text-muted text-right" style="background-color: transparent;"><cite title="Gary Poltonowicz">Gary Poltonowicz</cite></footer>
+        </blockquote>
+
+        {{ else }}
+        <ul class="list-unstyled">
+            {{ range $paginator.Pages }}
+            <li class="media">
+                <img src="" alt="..." class="mr-3" />
+                <div class="media-body">
+                    <a href="{{ .Permalink }}">
+                        <h5>{{ .Title }}</h5>
+                    </a>
+                    {{ .Summary }}
+                    {{ if .Truncated }}
+                    <!-- This <div> includes a read more link, but only if the summary is truncated... -->
+                    <div>
+                        <a href="{{ .RelPermalink }}">Read More…</a>
+                    </div>
+                    {{ end }}
+                </div>
+            </li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </div>
+</div>
+
+<div class="row">
+    <div class="offset-1 col-10">
+        <!-- Hugo's default pagination template. -->
+        {{ template "_internal/pagination.html" . }}
+    </div>
+</div>
+
+<div class="row">
+    <div class="offset-1 col-10">
+        {{ partial "contact-forms" $data }}
+    </div>
+</div>
+
+
+
+{{ end }}

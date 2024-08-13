@@ -1,0 +1,47 @@
+{{- $data := $.Site.Data.navigation }}
+{{- $hours := $.Site.Data.contact.hours }}
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h1>Links</h1>
+                <ul class="nav flex-column">
+                    {{- range $navidx, $nav := $data.bottom_menu }}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{- $nav.url }}">{{- $nav.name }}</a>
+                    </li>
+                    {{- end }}
+                </ul>
+                <div class="d-xs-block d-sm-block d-md-none d-lg-none d-xl-none">
+                    <h1>Copyright</h1>
+                    <p>Copyright &copy; 2020 Suburban Tavern</p>
+                </div>
+            </div>
+            <div class="col-sm">
+                <h1>Contat Info</h1>
+                <address>
+                    2201 Perkiomen Avenue<br />
+                    Mt. Penn, PA 19602<br />
+                    <span style="font-weight: bold;">Phone:</span> (610) 779-6440
+                </address>
+                <h1>Hours</h1>
+                {{- range $hidx, $h := $hours }}
+                <h2>{{- $h.header | markdownify }}</h2>
+                <dl class="row">
+                    {{- range $lidx, $l := $h.lines }}
+                    <dt class="col-4">{{ $l.day }}</dt>
+                    <dd class="col-8">{{ $l.hours }}</dd>
+                    {{- end }}
+                </dl>
+                {{- end }}
+            </div>
+            <div class="col-sm d-none d-md-block d-lg-block d-xl-block">
+                <h1>Copyright</h1>
+                <p>Copyright &copy; 2020 Suburban Tavern</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+

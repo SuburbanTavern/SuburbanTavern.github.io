@@ -1,0 +1,50 @@
+{{ define "main" }}
+
+<div class="row">
+    <div class="col-1">&nbsp;</div>
+    <div class="col-10">
+        <h1>{{ .Params.title }}</h1>
+    </div>
+    <div class="col-1">&nbsp;</div>
+</div>
+<div class="row">
+    <div class="col-1">&nbsp;</div>
+    <div class="col-10">{{ .Content  }}</div>
+    <div class="col-1">&nbsp;</div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <div class="media">
+            <div class="align-self-top img-fluid">
+                {{ if isset .Params "headshot" }}
+                <img src="{{.Params.headshot }}" alt="{{ .Params.author }}" class="rounded-circle" style="max-width: 100px; margin-right: 20px;" />
+                {{ end }}
+            </div>
+
+            <div class="media-body">
+                <h4>About {{ .Params.author }}</h4>
+
+                {{ if isset .Params "bio" }}
+                <p>{{ .Params.bio | markdownify }}</p>
+                {{ end }}
+
+                <div class="clearfix"></div>
+
+                {{ if isset .Params "original" }}
+                <a href="{{ .Params.original }}" target="_new">Original Article</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    <div class="col-1"></div>
+</div>
+
+
+{{ partial "contact-forms" }}
+
+
+{{ end }}

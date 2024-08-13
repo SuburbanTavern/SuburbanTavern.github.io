@@ -1,0 +1,15 @@
+baseURL = "https://www.suburbantavern.com/"
+languageCode = "en-us"
+title = "The Suburban Tavern and Cigar Lounge"
+theme = "default"
+summaryLength = 25
+
+[frontmatter]
+  date = ['dateOfEvent', 'date', 'publishDate', 'lastmod', ':default']
+  expiryDate = ['expiryDate']
+  lastmod = [':git', 'lastmod', 'date', 'publishDate']
+  publishDate = ['publishDate', 'date']
+
+[permalinks]
+  news = "/news/:year/:month/:title/"
+  events = "/events/:year/:month/:title/"
