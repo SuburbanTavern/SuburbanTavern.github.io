@@ -6,14 +6,15 @@
 {{ end }}
 
 {{ partial "jumbotron" $data }}
-
+<!-- 
+<div class="text-center">
+    <a href="#" class="btn btn-lg btn-info">Send Gary an Email</a>
+</div>
+ -->
 {{ if isset $data "sections" }}
 {{ partial "sections" $data.sections }}
 {{ end }}
 
 {{ partial "hours.html" . }}
-
-{{ partial "contact-forms" $data }}
-
 
 {{ end }}
